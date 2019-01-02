@@ -20,11 +20,11 @@ public class Address implements Serializable {
 	@Column(name="AddressId")
 	private int addressId;
 
-	private Object city;
+	private String city;
 
-	private Object country;
+	private String country;
 
-	private Object postal_Code;
+	private String postal_Code;
 
 	//bi-directional many-to-one association to Project
 	@OneToMany(mappedBy="address")
@@ -41,27 +41,27 @@ public class Address implements Serializable {
 		this.addressId = addressId;
 	}
 
-	public Object getCity() {
+	public String getCity() {
 		return this.city;
 	}
 
-	public void setCity(Object city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public Object getCountry() {
+	public String getCountry() {
 		return this.country;
 	}
 
-	public void setCountry(Object country) {
+	public void setCountry(String country) {
 		this.country = country;
 	}
 
-	public Object getPostal_Code() {
+	public String getPostal_Code() {
 		return this.postal_Code;
 	}
 
-	public void setPostal_Code(Object postal_Code) {
+	public void setPostal_Code(String postal_Code) {
 		this.postal_Code = postal_Code;
 	}
 

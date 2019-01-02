@@ -22,7 +22,7 @@ public class Project implements Serializable {
 	private int projectId;
 
 	@Column(name="category_type")
-	private Object categoryType;
+	private String categoryType;
 
 	@Column(name="end_date")
 	private Timestamp endDate;
@@ -30,10 +30,10 @@ public class Project implements Serializable {
 	@Column(name="levio_number_ressources")
 	private int levioNumberRessources;
 
-	private Object picture;
+	private String picture;
 
 	@Column(name="project_name")
-	private Object projectName;
+	private String projectName;
 
 	@Column(name="project_type")
 	private int projectType;
@@ -79,11 +79,11 @@ public class Project implements Serializable {
 		this.projectId = projectId;
 	}
 
-	public Object getCategoryType() {
+	public String getCategoryType() {
 		return this.categoryType;
 	}
 
-	public void setCategoryType(Object categoryType) {
+	public void setCategoryType(String categoryType) {
 		this.categoryType = categoryType;
 	}
 
@@ -103,19 +103,19 @@ public class Project implements Serializable {
 		this.levioNumberRessources = levioNumberRessources;
 	}
 
-	public Object getPicture() {
+	public String getPicture() {
 		return this.picture;
 	}
 
-	public void setPicture(Object picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
-	public Object getProjectName() {
+	public String getProjectName() {
 		return this.projectName;
 	}
 
-	public void setProjectName(Object projectName) {
+	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
 

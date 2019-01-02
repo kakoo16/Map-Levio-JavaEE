@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml">
+
+
+<ui:define name="title">Contrat</ui:define>
+<ui:define name="content">
+
+<h:form>
+<h:dataTable value="#{contratBean.contracts}" var="contrat" border="1">
+
+<h:column>
+	<f:facet name="header"><h:outputText value="Employé" /></f:facet>
+	<h:outputText value="#{contrat.employe.nom}" />
+</h:column>
+<h:column>
+	<f:facet name="header"><h:outputText value="Type contrat" /></f:facet>
+	<h:outputText value="#{contrat.typeContrat}" />
+</h:column>
+<h:column>
+	<f:facet name="header"><h:outputText value="Salaire" /></f:facet>
+	<h:outputText value="#{contrat.salaire}" />
+</h:column>
+<h:column>
+	<f:facet name="header"><h:outputText value="Date" /></f:facet>
+	<h:outputText value="#{contrat.dateDebut}" />
+</h:column>
+</h:dataTable>
+
+<h:panelGrid columns="2">
+		<h:outputText value="Employe" />
+			<h:selectOneMenu value="#{contratBean.employeId}">
+			<f:selectItems value="#{contratBean.employes}" var="employe"  itemValue="#{employe.id}"  itemLabel="#{employe.email}" />
+			</h:selectOneMenu>
+			<h:outputText value="date Debut" />
+			<h:inputText value="#{contratBean.date}" >
+			<f:convertDateTime pattern="dd-MM-yyyy" />
+			</h:inputText>
+			<h:outputText value="salaire" />
+			<h:inputText  value="#{contratBean.salaire}" />
+			<h:outputText value="contrat" />
+		<h:inputText value="#{contratBean.typeContrat}" />
+		<h:commandButton action="#{contratBean.ajouterContrat()}" value="ajouter contrat" />
+		</h:panelGrid>
+</h:form>
+</ui:define>
+</ui:composition>
+

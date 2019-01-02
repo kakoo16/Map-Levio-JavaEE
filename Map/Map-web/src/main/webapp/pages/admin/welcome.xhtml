@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="title"></ui:define>
+<ui:define name="content">
+
+
+
+
+
+<!-- wiw -->
+
+<h:form>
+    <p:growl id="messages" showDetail="true"/>
+ 
+    <p:slideMenu style="width:200px">
+     
+        <p:submenu label="Navigations" icon="pi pi-home">
+            <p:submenu label="Mandates">
+                <p:menuitem value="Add mandate" url="http://www.prime.com.tr" />
+                <p:menuitem value="Show all mandates" url="http://www.primefaces.org" />
+            </p:submenu>
+        </p:submenu>
+    </p:slideMenu>
+     
+    <p:separator />
+ 
+    <p:commandButton id="dynaButton" value="Show" type="button" icon="pi pi-home"/>
+    <p:slideMenu overlay="true" trigger="dynaButton" my="left top" at="left bottom" style="width:180px">
+   
+        <p:submenu label="Navigations" icon="pi pi-home">
+            <p:submenu label=" Mandates">
+                <p:menuitem value="Prime" url="http://www.prime.com.tr" />
+                <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+            </p:submenu>
+            <p:menuitem value="Mobile" />
+        </p:submenu>
+    </p:slideMenu>
+</h:form>
+
+<!-- wiw -->
+
+
+
+
+
+<h:link outcome="/pages/admin/gererEmploye" value="gerer les employes"/>
+<br/>
+<br/>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+ 
+ 
+       <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:400px" />
+       
+       <style type="text/css">
+    .ui-analog-clock {
+        width: 200px;
+    }
+</style>  
+ 
+ 
+<h:link outcome="/pages/admin/ajouterContrat" value="ajouter un contrat pour un employe existant"/>
+</ui:define>
+</ui:composition>
+
+

@@ -37,10 +37,10 @@ public class Message implements Serializable {
 	private boolean etatMessage;
 
 	@Column(name="Message_content")
-	private Object message_content;
+	private String message_content;
 
 	@Column(name="Message_object")
-	private Object message_object;
+	private String message_object;
 
 	//bi-directional many-to-many association to Inboxe
 	@ManyToMany
@@ -116,19 +116,19 @@ public class Message implements Serializable {
 		this.etatMessage = etatMessage;
 	}
 
-	public Object getMessage_content() {
+	public String getMessage_content() {
 		return this.message_content;
 	}
 
-	public void setMessage_content(Object message_content) {
+	public void setMessage_content(String message_content) {
 		this.message_content = message_content;
 	}
 
-	public Object getMessage_object() {
+	public String getMessage_object() {
 		return this.message_object;
 	}
 
-	public void setMessage_object(Object message_object) {
+	public void setMessage_object(String message_object) {
 		this.message_object = message_object;
 	}
 

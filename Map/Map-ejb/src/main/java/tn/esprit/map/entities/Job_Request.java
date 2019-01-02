@@ -23,7 +23,7 @@ public class Job_Request implements Serializable {
 	private Timestamp date_Request;
 
 	@Column(name="Speciality")
-	private Object speciality;
+	private String speciality;
 
 	@Column(name="State_Type")
 	private int state_Type;
@@ -52,11 +52,11 @@ public class Job_Request implements Serializable {
 		this.date_Request = date_Request;
 	}
 
-	public Object getSpeciality() {
+	public String getSpeciality() {
 		return this.speciality;
 	}
 
-	public void setSpeciality(Object speciality) {
+	public void setSpeciality(String speciality) {
 		this.speciality = speciality;
 	}
 

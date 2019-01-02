@@ -1,0 +1,97 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+<ui:define name="content">
+
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+ 
+ 
+       <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:400px" />
+       
+
+
+<style type="text/css">
+    .value {
+        font-weight: bold;
+    }
+</style>
+<h:form>   
+    <p:growl id="growl" showDetail="true" sticky="true" />  
+       
+    <p:panel header="Assignation Form ">  
+        <h:panelGrid columns="2" cellpadding="5">  
+          
+        </h:panelGrid>  
+  
+  <h:form>    
+    <h3 style="margin-top: 0">Please Add your Assignation  </h3>
+    <p>In the following input  you can express your assignation   .</p>
+    <p:inputTextarea rows="10" cols="50" completeMethod="#{inputTextareaView.completeArea}" value="#{assignationBean.description}" queryDelay="750" minQueryLength="4" />
+ 
+    
+    <br />
+    <h:outputText id="display" />
+
+
+</h:form>
+  
+  	    <h:panelGrid columns="2" cellpadding="5">  
+	    <p:outputLabel for="inline" value="Date debut assignation  :" />
+        <p:calendar id="inline" value="#{assignationBean.stard_Date}" mode="inline" />
+      
+    	 </h:panelGrid>  
+    	 <h:panelGrid columns="2" cellpadding="5">  
+	    <p:outputLabel for="inline1" value="Date debut assignation  :" />
+        <p:calendar id="inline1" value="#{assignationBean.end_Date}" mode="inline" />
+      
+    	 </h:panelGrid>  
+   		  <p:messages showDetail="true"/>
+      <p:commandButton value="Add your assignation" action="#{assignationBean.addAssign()}" update="@form"  oncomplete="PF('dlg').show()"/>
+     <p:commandButton value="MAJ your assignation" action="#{assignationBean.mettreajour()}" update="@form"  oncomplete="PF('dlg').show()"/>
+   
+ 
+    </p:panel> 
+ </h:form>   
+    
+     <br />  <br />
+ <h:form>   
+    
+    <p:dataTable var="holiday" value="#{assignationBean.holidays}">
+   
+     <p:column headerText="Id">
+        <h:outputText value="#{holiday.holidayId}" />
+    </p:column>
+   
+    <p:column headerText="Description">
+        <h:outputText value="#{holiday.description}" />
+    </p:column>
+ 
+    <p:column headerText="Start Date">
+        <h:outputText value="#{holiday.stard_Date}" />
+    </p:column>
+     <p:column headerText="End Date">
+        <h:outputText value="#{holiday.end_Date}" />
+    </p:column>
+      <p:column headerText="Do you want to delete this assignation ">
+         <h:commandButton action="#{assignationBean.supprimer(holiday.holidayId)}" value="Supprimer" />
+         <h:commandButton action="#{assignationBean.modifier(holiday)}" value="Modifier" />
+      </p:column>
+</p:dataTable>
+        
+</h:form>
+
+
+
+
+
+
+<!--  wiw  -->
+
+
+
+
+</ui:define>
+</ui:composition>

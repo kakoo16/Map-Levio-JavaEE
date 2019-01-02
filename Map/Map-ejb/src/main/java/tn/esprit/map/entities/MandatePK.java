@@ -18,10 +18,10 @@ public class MandatePK implements Serializable {
 	@Column(name="Id", insertable=false, updatable=false)
 	private String id;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private java.util.Date start_Date;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private java.util.Date end_Date;
 
 	public MandatePK() {

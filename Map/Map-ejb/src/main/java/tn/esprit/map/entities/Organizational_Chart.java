@@ -19,21 +19,21 @@ public class Organizational_Chart implements Serializable {
 	@Column(name="ChartId")
 	private int chartId;
 
-	private Object client_Name;
+	private String client_Name;
 
 	@Column(name="directionnal_level")
-	private Object directionnalLevel;
+	private String directionnalLevel;
 
 	@Column(name="manager_account")
-	private Object managerAccount;
+	private String managerAccount;
 
 	@Column(name="name_assignment_manager_client")
-	private Object nameAssignmentManagerClient;
+	private String nameAssignmentManagerClient;
 
-	private Object program_Name;
+	private String program_Name;
 
 	@Column(name="project_responsable")
-	private Object projectResponsable;
+	private String projectResponsable;
 
 	//bi-directional many-to-one association to AspNetUser
 	@OneToMany(mappedBy="organizationalChart")
@@ -67,51 +67,51 @@ public class Organizational_Chart implements Serializable {
 		this.chartId = chartId;
 	}
 
-	public Object getClient_Name() {
+	public String getClient_Name() {
 		return this.client_Name;
 	}
 
-	public void setClient_Name(Object client_Name) {
+	public void setClient_Name(String client_Name) {
 		this.client_Name = client_Name;
 	}
 
-	public Object getDirectionnalLevel() {
+	public String getDirectionnalLevel() {
 		return this.directionnalLevel;
 	}
 
-	public void setDirectionnalLevel(Object directionnalLevel) {
+	public void setDirectionnalLevel(String directionnalLevel) {
 		this.directionnalLevel = directionnalLevel;
 	}
 
-	public Object getManagerAccount() {
+	public String getManagerAccount() {
 		return this.managerAccount;
 	}
 
-	public void setManagerAccount(Object managerAccount) {
+	public void setManagerAccount(String managerAccount) {
 		this.managerAccount = managerAccount;
 	}
 
-	public Object getNameAssignmentManagerClient() {
+	public String getNameAssignmentManagerClient() {
 		return this.nameAssignmentManagerClient;
 	}
 
-	public void setNameAssignmentManagerClient(Object nameAssignmentManagerClient) {
+	public void setNameAssignmentManagerClient(String nameAssignmentManagerClient) {
 		this.nameAssignmentManagerClient = nameAssignmentManagerClient;
 	}
 
-	public Object getProgram_Name() {
+	public String getProgram_Name() {
 		return this.program_Name;
 	}
 
-	public void setProgram_Name(Object program_Name) {
+	public void setProgram_Name(String program_Name) {
 		this.program_Name = program_Name;
 	}
 
-	public Object getProjectResponsable() {
+	public String getProjectResponsable() {
 		return this.projectResponsable;
 	}
 
-	public void setProjectResponsable(Object projectResponsable) {
+	public void setProjectResponsable(String projectResponsable) {
 		this.projectResponsable = projectResponsable;
 	}
 

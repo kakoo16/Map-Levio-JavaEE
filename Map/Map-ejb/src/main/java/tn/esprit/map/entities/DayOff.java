@@ -22,7 +22,7 @@ public class DayOff implements Serializable {
 
 	private Timestamp end_Date;
 
-	private Object raison;
+	private String raison;
 
 	private Timestamp start_Date;
 
@@ -50,11 +50,11 @@ public class DayOff implements Serializable {
 		this.end_Date = end_Date;
 	}
 
-	public Object getRaison() {
+	public String getRaison() {
 		return this.raison;
 	}
 
-	public void setRaison(Object raison) {
+	public void setRaison(String raison) {
 		this.raison = raison;
 	}
 

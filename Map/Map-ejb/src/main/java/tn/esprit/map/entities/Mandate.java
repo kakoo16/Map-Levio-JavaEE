@@ -22,12 +22,20 @@ public class Mandate implements Serializable {
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
-	@JoinColumn(name="Id")
+	@JoinColumn(name="Id" , insertable=false , updatable=false )
 	private AspNetUser aspNetUser;
+
+	public Mandate(MandatePK id, double fees, AspNetUser aspNetUser, Project project) {
+		super();
+		this.id = id;
+		this.fees = fees;
+		this.aspNetUser = aspNetUser;
+		this.project = project;
+	}
 
 	//bi-directional many-to-one association to Project
 	@ManyToOne
-	@JoinColumn(name="ProjectId")
+	@JoinColumn(name="ProjectId" , insertable=false , updatable=false )
 	private Project project;
 
 	public Mandate() {

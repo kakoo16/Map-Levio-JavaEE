@@ -20,7 +20,7 @@ public class Inboxe implements Serializable {
 	@Column(name="InboxId")
 	private int inboxId;
 
-	private Object sender;
+	private String sender;
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
@@ -46,7 +46,7 @@ public class Inboxe implements Serializable {
 		return this.sender;
 	}
 
-	public void setSender(Object sender) {
+	public void setSender(String sender) {
 		this.sender = sender;
 	}
 

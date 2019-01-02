@@ -20,9 +20,9 @@ public class Skill implements Serializable {
 	@Column(name="SkillId")
 	private int skillId;
 
-	private Object description_Skill;
+	private String description_Skill;
 
-	private Object name_Skill;
+	private String name_Skill;
 
 	private float rate_Skill;
 
@@ -46,19 +46,19 @@ public class Skill implements Serializable {
 		this.skillId = skillId;
 	}
 
-	public Object getDescription_Skill() {
+	public String getDescription_Skill() {
 		return this.description_Skill;
 	}
 
-	public void setDescription_Skill(Object description_Skill) {
+	public void setDescription_Skill(String description_Skill) {
 		this.description_Skill = description_Skill;
 	}
 
-	public Object getName_Skill() {
+	public String getName_Skill() {
 		return this.name_Skill;
 	}
 
-	public void setName_Skill(Object name_Skill) {
+	public void setName_Skill(String name_Skill) {
 		this.name_Skill = name_Skill;
 	}
 

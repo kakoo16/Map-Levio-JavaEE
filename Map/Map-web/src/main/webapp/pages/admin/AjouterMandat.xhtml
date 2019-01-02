@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+<ui:define name="content">
+
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+ 
+ 
+       <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:400px" />
+       
+
+
+
+
+<h:form>   
+    <p:growl id="growl" showDetail="true" sticky="true" />  
+       
+    <p:panel header="You can Assign A ressource to a Mandate From now  On">  
+       
+         <h:panelGrid columns="2" cellpadding="5">  
+        <h:outputText value="Projet Name" />
+			<h:selectOneMenu value="#{mandateBean.projectId}">
+			<f:selectItems value="#{mandateBean.projets}" var="p"  itemValue="#{p.projectId}"  itemLabel="#{p.projectName}" />
+			</h:selectOneMenu>
+    </h:panelGrid>  
+     <h:panelGrid columns="2" cellpadding="5">  
+   <h:outputLabel for="msg" value="Email" />
+			<h:selectOneMenu value="#{mandateBean.id}">
+			<f:selectItems value="#{mandateBean.ressources}" var="p"  itemValue="#{p.id}"  itemLabel="#{p.email}" />
+			</h:selectOneMenu>
+    </h:panelGrid>  
+     <h:panelGrid columns="2" cellpadding="5">  
+		<p:outputLabel for="popup" value="Date Debut Mandat :" />
+      
+      
+        <p:calendar id="popup1" value="#{mandateBean.start_date}" />
+   		 </h:panelGrid>  
+   		   <h:panelGrid columns="2" cellpadding="5">  
+   		<p:outputLabel for="popup" value="Date Fin Mandat :" />
+        <p:calendar id="popup" value="#{mandateBean.end_date}" />
+         </h:panelGrid>  
+          <p:messages showDetail="true"/>
+      <p:commandButton value="Assign A Mandate to A ressource" action="#{mandateBean.addMandate()}" update="@form"  oncomplete="PF('dlg').show()"/>
+   
+ 
+    <p:dialog id="dialog" header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
+        <h:panelGrid columns="1" id="display">
+         	
+         	<h:outputText value="La Ressource selectionner ci-joint est affecté ." />
+         	<h:outputText value="Les Frais du Mandat: #{mandateBean.fees}" />
+            <h:outputText value="Date Fin Mandat: #{mandateBean.end_date}" />
+            <h:outputText value="Date debut Mandat:#{mandateBean.start_date}" />
+        </h:panelGrid>
+    </p:dialog>
+   
+   
+   
+   
+   
+    </p:panel>     
+</h:form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>

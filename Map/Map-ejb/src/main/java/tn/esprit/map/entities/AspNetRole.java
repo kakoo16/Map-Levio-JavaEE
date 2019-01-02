@@ -21,7 +21,7 @@ public class AspNetRole implements Serializable {
 	private String id;
 
 	@Column(name="Name")
-	private Object name;
+	private String name;
 
 	//bi-directional many-to-many association to AspNetUser
 	@ManyToMany(mappedBy="aspNetRoles")
@@ -38,11 +38,11 @@ public class AspNetRole implements Serializable {
 		this.id = id;
 	}
 
-	public Object getName() {
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(Object name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

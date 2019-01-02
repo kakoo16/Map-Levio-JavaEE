@@ -1,6 +1,8 @@
 package tn.esprit.map.entities;
 
 import java.io.Serializable;
+
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -22,121 +24,121 @@ public class AspNetUser implements Serializable {
 	private String id;
 
 	@Column(name="AccessFailedCount")
-	private int accessFailedCount;
+	private Integer accessFailedCount;
 
 	@Column(name="AdministratorId")
-	private int administratorId;
+	private Integer  administratorId;
 
 	@Column(name="availibity_type")
-	private int availibityType;
+	private Integer  availibityType;
 
 	@Column(name="Business_sector")
-	private Object business_sector;
+	private String business_sector;
 
 	@Column(name="CandidatId")
-	private int candidatId;
+	private Integer  candidatId;
 
-	private int client_Type;
+	private Integer  client_Type;
 
 	@Column(name="ClientId")
-	private int clientId;
+	private Integer  clientId;
 
-	private int contract_Type;
+	private Integer  contract_Type;
 
 	@Column(name="DaysoffFK")
-	private int daysoffFK;
+	private Integer  daysoffFK;
 
 	@Column(name="Discriminator")
-	private Object discriminator;
+	private String discriminator;
 
 	@Column(name="Email")
-	private Object email;
+	private String email;
 
 	@Column(name="EmailConfirmed")
-	private boolean emailConfirmed;
+	private Boolean emailConfirmed;
 
-	private boolean etat;
+	private Boolean etat;
 
 	@Column(name="EtatResource")
-	private Object etatResource;
+	private String etatResource;
 
 	@Column(name="First_name")
-	private Object first_name;
+	private String first_name;
 
 	@Column(name="FirstName")
-	private Object firstName;
+	private String firstName;
 
 	@Column(name="HolidayFk")
-	private int holidayFk;
+	private Integer holidayFk;
 
 	@Column(name="JobType")
-	private Object jobType;
+	private String jobType;
 
-	private Object lang;
+	private String lang;
 
 	@Column(name="Last_name")
-	private Object last_name;
+	private String last_name;
 
 	@Column(name="LastName")
-	private Object lastName;
+	private String lastName;
 
-	private Object lat;
+	private String lat;
 
 	@Column(name="LockoutEnabled")
-	private boolean lockoutEnabled;
+	private Boolean lockoutEnabled;
 
 	@Column(name="LockoutEndDateUtc")
 	private Timestamp lockoutEndDateUtc;
 
-	private Object logo;
+	private String logo;
 
-	private Object nameClient;
+	private String nameClient;
 
 	@Column(name="Note")
-	private float note;
+	private Float note;
 
 	@Column(name="Organizational_ChartFk")
-	private int organizational_ChartFk;
+	private Integer  organizational_ChartFk;
 
 	@Column(name="PasswordHash")
-	private Object passwordHash;
+	private String passwordHash;
 
 	@Column(name="PhoneNumber")
-	private Object phoneNumber;
+	private String phoneNumber;
 
 	@Column(name="PhoneNumberConfirmed")
-	private boolean phoneNumberConfirmed;
+	private Boolean phoneNumberConfirmed;
 
-	private Object picture;
+	private String picture;
 
 	@Column(name="RessourceId")
-	private int ressourceId;
+	private Integer ressourceId;
 
 	@Column(name="Role")
-	private Object role;
+	private String role;
 
 	@Column(name="Salary")
-	private float salary;
+	private Float salary;
 
 	@Column(name="SecurityStamp")
-	private Object securityStamp;
+	private String securityStamp;
 
 	@Column(name="Seniority")
-	private Object seniority;
+	private String seniority;
 
 	@Column(name="SkiFk")
-	private int skiFk;
+	private Integer skiFk;
 
-	private int state_Type;
+	private Integer state_Type;
 
 	@Column(name="TwoFactorEnabled")
-	private boolean twoFactorEnabled;
+	private Boolean twoFactorEnabled;
 
 	@Column(name="UserName")
-	private Object userName;
+	private String userName;
 
 	@Column(name="Work_profil")
-	private Object work_profil;
+	private String work_profil;
 
 	//bi-directional many-to-one association to AspNetUserClaim
 	@OneToMany(mappedBy="aspNetUser")
@@ -236,187 +238,187 @@ public class AspNetUser implements Serializable {
 		this.id = id;
 	}
 
-	public int getAccessFailedCount() {
+	public Integer getAccessFailedCount() {
 		return this.accessFailedCount;
 	}
 
-	public void setAccessFailedCount(int accessFailedCount) {
+	public void setAccessFailedCount(Integer accessFailedCount) {
 		this.accessFailedCount = accessFailedCount;
 	}
 
-	public int getAdministratorId() {
+	public Integer  getAdministratorId() {
 		return this.administratorId;
 	}
 
-	public void setAdministratorId(int administratorId) {
+	public void setAdministratorId(Integer  administratorId) {
 		this.administratorId = administratorId;
 	}
 
-	public int getAvailibityType() {
+	public Integer getAvailibityType() {
 		return this.availibityType;
 	}
 
-	public void setAvailibityType(int availibityType) {
+	public void setAvailibityType(Integer availibityType) {
 		this.availibityType = availibityType;
 	}
 
-	public Object getBusiness_sector() {
+	public String getBusiness_sector() {
 		return this.business_sector;
 	}
 
-	public void setBusiness_sector(Object business_sector) {
+	public void setBusiness_sector(String business_sector) {
 		this.business_sector = business_sector;
 	}
 
-	public int getCandidatId() {
+	public Integer getCandidatId() {
 		return this.candidatId;
 	}
 
-	public void setCandidatId(int candidatId) {
+	public void setCandidatId(Integer candidatId) {
 		this.candidatId = candidatId;
 	}
 
-	public int getClient_Type() {
+	public Integer getClient_Type() {
 		return this.client_Type;
 	}
 
-	public void setClient_Type(int client_Type) {
+	public void setClient_Type(Integer client_Type) {
 		this.client_Type = client_Type;
 	}
 
-	public int getClientId() {
+	public Integer getClientId() {
 		return this.clientId;
 	}
 
-	public void setClientId(int clientId) {
+	public void setClientId(Integer clientId) {
 		this.clientId = clientId;
 	}
 
-	public int getContract_Type() {
+	public Integer getContract_Type() {
 		return this.contract_Type;
 	}
 
-	public void setContract_Type(int contract_Type) {
+	public void setContract_Type(Integer contract_Type) {
 		this.contract_Type = contract_Type;
 	}
 
-	public int getDaysoffFK() {
+	public Integer getDaysoffFK() {
 		return this.daysoffFK;
 	}
 
-	public void setDaysoffFK(int daysoffFK) {
+	public void setDaysoffFK(Integer daysoffFK) {
 		this.daysoffFK = daysoffFK;
 	}
 
-	public Object getDiscriminator() {
+	public String getDiscriminator() {
 		return this.discriminator;
 	}
 
-	public void setDiscriminator(Object discriminator) {
+	public void setDiscriminator(String discriminator) {
 		this.discriminator = discriminator;
 	}
 
-	public Object getEmail() {
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(Object email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public boolean getEmailConfirmed() {
+	public Boolean getEmailConfirmed() {
 		return this.emailConfirmed;
 	}
 
-	public void setEmailConfirmed(boolean emailConfirmed) {
+	public void setEmailConfirmed(Boolean emailConfirmed) {
 		this.emailConfirmed = emailConfirmed;
 	}
 
-	public boolean getEtat() {
+	public Boolean getEtat() {
 		return this.etat;
 	}
 
-	public void setEtat(boolean etat) {
+	public void setEtat(Boolean etat) {
 		this.etat = etat;
 	}
 
-	public Object getEtatResource() {
+	public String getEtatResource() {
 		return this.etatResource;
 	}
 
-	public void setEtatResource(Object etatResource) {
+	public void setEtatResource(String etatResource) {
 		this.etatResource = etatResource;
 	}
 
-	public Object getFirst_name() {
+	public String getFirst_name() {
 		return this.first_name;
 	}
 
-	public void setFirst_name(Object first_name) {
+	public void setFirst_name(String first_name) {
 		this.first_name = first_name;
 	}
 
-	public Object getFirstName() {
+	public String getFirstName() {
 		return this.firstName;
 	}
 
-	public void setFirstName(Object firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public int getHolidayFk() {
+	public Integer getHolidayFk() {
 		return this.holidayFk;
 	}
 
-	public void setHolidayFk(int holidayFk) {
+	public void setHolidayFk(Integer holidayFk) {
 		this.holidayFk = holidayFk;
 	}
 
-	public Object getJobType() {
+	public String getJobType() {
 		return this.jobType;
 	}
 
-	public void setJobType(Object jobType) {
+	public void setJobType(String jobType) {
 		this.jobType = jobType;
 	}
 
-	public Object getLang() {
+	public String getLang() {
 		return this.lang;
 	}
 
-	public void setLang(Object lang) {
+	public void setLang(String lang) {
 		this.lang = lang;
 	}
 
-	public Object getLast_name() {
+	public String getLast_name() {
 		return this.last_name;
 	}
 
-	public void setLast_name(Object last_name) {
+	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
 
-	public Object getLastName() {
+	public String getLastName() {
 		return this.lastName;
 	}
 
-	public void setLastName(Object lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	public Object getLat() {
+	public String getLat() {
 		return this.lat;
 	}
 
-	public void setLat(Object lat) {
+	public void setLat(String lat) {
 		this.lat = lat;
 	}
 
-	public boolean getLockoutEnabled() {
+	public Boolean getLockoutEnabled() {
 		return this.lockoutEnabled;
 	}
 
-	public void setLockoutEnabled(boolean lockoutEnabled) {
+	public void setLockoutEnabled(Boolean lockoutEnabled) {
 		this.lockoutEnabled = lockoutEnabled;
 	}
 
@@ -428,147 +430,147 @@ public class AspNetUser implements Serializable {
 		this.lockoutEndDateUtc = lockoutEndDateUtc;
 	}
 
-	public Object getLogo() {
+	public String getLogo() {
 		return this.logo;
 	}
 
-	public void setLogo(Object logo) {
+	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
-	public Object getNameClient() {
+	public String getNameClient() {
 		return this.nameClient;
 	}
 
-	public void setNameClient(Object nameClient) {
+	public void setNameClient(String nameClient) {
 		this.nameClient = nameClient;
 	}
 
-	public float getNote() {
+	public Float getNote() {
 		return this.note;
 	}
 
-	public void setNote(float note) {
+	public void setNote(Float note) {
 		this.note = note;
 	}
 
-	public int getOrganizational_ChartFk() {
+	public Integer getOrganizational_ChartFk() {
 		return this.organizational_ChartFk;
 	}
 
-	public void setOrganizational_ChartFk(int organizational_ChartFk) {
+	public void setOrganizational_ChartFk(Integer organizational_ChartFk) {
 		this.organizational_ChartFk = organizational_ChartFk;
 	}
 
-	public Object getPasswordHash() {
+	public String getPasswordHash() {
 		return this.passwordHash;
 	}
 
-	public void setPasswordHash(Object passwordHash) {
+	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
 
-	public Object getPhoneNumber() {
+	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
 
-	public void setPhoneNumber(Object phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public boolean getPhoneNumberConfirmed() {
+	public Boolean getPhoneNumberConfirmed() {
 		return this.phoneNumberConfirmed;
 	}
 
-	public void setPhoneNumberConfirmed(boolean phoneNumberConfirmed) {
+	public void setPhoneNumberConfirmed(Boolean phoneNumberConfirmed) {
 		this.phoneNumberConfirmed = phoneNumberConfirmed;
 	}
 
-	public Object getPicture() {
+	public String getPicture() {
 		return this.picture;
 	}
 
-	public void setPicture(Object picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
-	public int getRessourceId() {
+	public Integer getRessourceId() {
 		return this.ressourceId;
 	}
 
-	public void setRessourceId(int ressourceId) {
+	public void setRessourceId(Integer ressourceId) {
 		this.ressourceId = ressourceId;
 	}
 
-	public Object getRole() {
+	public String getRole() {
 		return this.role;
 	}
 
-	public void setRole(Object role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 
-	public float getSalary() {
+	public Float getSalary() {
 		return this.salary;
 	}
 
-	public void setSalary(float salary) {
+	public void setSalary(Float salary) {
 		this.salary = salary;
 	}
 
-	public Object getSecurityStamp() {
+	public String getSecurityStamp() {
 		return this.securityStamp;
 	}
 
-	public void setSecurityStamp(Object securityStamp) {
+	public void setSecurityStamp(String securityStamp) {
 		this.securityStamp = securityStamp;
 	}
 
-	public Object getSeniority() {
+	public String getSeniority() {
 		return this.seniority;
 	}
 
-	public void setSeniority(Object seniority) {
+	public void setSeniority(String seniority) {
 		this.seniority = seniority;
 	}
 
-	public int getSkiFk() {
+	public Integer getSkiFk() {
 		return this.skiFk;
 	}
 
-	public void setSkiFk(int skiFk) {
+	public void setSkiFk(Integer skiFk) {
 		this.skiFk = skiFk;
 	}
 
-	public int getState_Type() {
+	public Integer getState_Type() {
 		return this.state_Type;
 	}
 
-	public void setState_Type(int state_Type) {
+	public void setState_Type(Integer state_Type) {
 		this.state_Type = state_Type;
 	}
 
-	public boolean getTwoFactorEnabled() {
+	public Boolean getTwoFactorEnabled() {
 		return this.twoFactorEnabled;
 	}
 
-	public void setTwoFactorEnabled(boolean twoFactorEnabled) {
+	public void setTwoFactorEnabled(Boolean twoFactorEnabled) {
 		this.twoFactorEnabled = twoFactorEnabled;
 	}
 
-	public Object getUserName() {
+	public String getUserName() {
 		return this.userName;
 	}
 
-	public void setUserName(Object userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-	public Object getWork_profil() {
+	public String getWork_profil() {
 		return this.work_profil;
 	}
 
-	public void setWork_profil(Object work_profil) {
+	public void setWork_profil(String work_profil) {
 		this.work_profil = work_profil;
 	}
 
@@ -933,5 +935,5 @@ public class AspNetUser implements Serializable {
 
 		return skill;
 	}
-
+   
 }

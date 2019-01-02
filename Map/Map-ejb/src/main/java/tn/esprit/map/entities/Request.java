@@ -26,7 +26,7 @@ public class Request implements Serializable {
 	private Timestamp depositHour;
 
 	@Column(name="education_scolarity")
-	private Object educationScolarity;
+	private String educationScolarity;
 
 	@Column(name="end_date_mandate")
 	private Timestamp endDateMandate;
@@ -35,10 +35,10 @@ public class Request implements Serializable {
 	private Timestamp experienceYear;
 
 	@Column(name="Manager")
-	private Object manager;
+	private String manager;
 
 	@Column(name="requested_profil")
-	private Object requestedProfil;
+	private String requestedProfil;
 
 	@Column(name="start_date_mandate")
 	private Timestamp startDateMandate;
@@ -85,11 +85,11 @@ public class Request implements Serializable {
 		this.depositHour = depositHour;
 	}
 
-	public Object getEducationScolarity() {
+	public String getEducationScolarity() {
 		return this.educationScolarity;
 	}
 
-	public void setEducationScolarity(Object educationScolarity) {
+	public void setEducationScolarity(String educationScolarity) {
 		this.educationScolarity = educationScolarity;
 	}
 
@@ -109,19 +109,19 @@ public class Request implements Serializable {
 		this.experienceYear = experienceYear;
 	}
 
-	public Object getManager() {
+	public String getManager() {
 		return this.manager;
 	}
 
-	public void setManager(Object manager) {
+	public void setManager(String manager) {
 		this.manager = manager;
 	}
 
-	public Object getRequestedProfil() {
+	public String getRequestedProfil() {
 		return this.requestedProfil;
 	}
 
-	public void setRequestedProfil(Object requestedProfil) {
+	public void setRequestedProfil(String requestedProfil) {
 		this.requestedProfil = requestedProfil;
 	}
 
