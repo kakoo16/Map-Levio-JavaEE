@@ -98,9 +98,9 @@ public class MandateService implements MandateServiceRemote{
 	@Override
 	public void NotifyCandidate(String id) {
 		AspNetUser candidate = em.find(AspNetUser.class, id);
-		mail.send(candidate.getEmail(), "Alert About A New Mandate",
+		mail.send(candidate.getEmail(), "Alert About A New Mandate Or an ended One",
 				"We Levio company inform you Mr" + candidate.getFirstName()
-						+ " that you have to be in a mandate  please check your application"
+						+ " that you have to be in a mandate  please check your application .If Not yoou have a mandate that have passed 40 Days "
 						+ " to know more",
 				"", "", "", "", "", "", "");
 
@@ -166,7 +166,7 @@ public class MandateService implements MandateServiceRemote{
 	}
 
 	
-	@Schedule(second = "00", minute = "15", hour = "18")
+	@Schedule(second = "00", minute = "00", hour = "00")
 	public void AlertEndMandate(Timer timer) {
 		System.out.println(getDate());
 		String pattern = "yyyy-MM-dd";
