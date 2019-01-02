@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
-import java.util.Timer;
+import javax.ejb.Timer;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -137,13 +137,26 @@ public class MandateService implements MandateServiceRemote{
 		LocalDateTime localDateTime = currentDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
 
 		// plus one
-		localDateTime = localDateTime.plusDays(40);
+		localDateTime = localDateTime.plusDays(1);
 
 		// convert LocalDateTime to date
 		Date currentDatePlus = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
 
 		return dateFormat.format(currentDatePlus);
 
+	}
+	public Date getDate1(){
+		// Get current date
+		Date currentDate = new Date();
+		LocalDateTime localDateTime = currentDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+
+		// plus one
+		localDateTime = localDateTime.plusDays(1);
+
+		// convert LocalDateTime to date
+		Date currentDatePlus = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+
+		return currentDatePlus;
 	}
 	public String convertDate(Date date)
 	{
@@ -153,26 +166,23 @@ public class MandateService implements MandateServiceRemote{
 	}
 
 	
-	@Schedule(second = "00", minute = "00", hour = "00")
+	@Schedule(second = "00", minute = "15", hour = "18")
 	public void AlertEndMandate(Timer timer) {
 		System.out.println(getDate());
 		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 		TypedQuery<Mandate> query = em.createQuery(
-				"SELECT  m FROM Mandate m where m.mandateId.dateFin = :d ", Mandate.class);
+				"SELECT  m FROM Mandate m  ", Mandate.class);
 
 		try {
-			query.setParameter("d", simpleDateFormat.parse(getDate()), TemporalType.DATE);
 			List<Mandate> mandates = query.getResultList();
-			if (!mandates.isEmpty()) {
-				mandates.forEach(e -> {
-			System.out.println(" hani lena");
-				});
-
-			} else
-				System.out.println("liste vide");
-
+			
+					mandates.forEach(e -> { 
+						if (getDate().equals(convertDate(e.getId().getEnd_Date())))
+							NotifyCandidate(e.getAspNetUser().getId());
+		});
 		} catch (Exception e) {
+			System.out.println(e);
 			System.out.println("liste vide");
 		}
 

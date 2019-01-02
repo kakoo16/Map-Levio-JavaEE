@@ -2,8 +2,7 @@ package tn.esprit.map.services;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Timer;
-
+import javax.ejb.Timer;
 import javax.ejb.Remote;
 
 import tn.esprit.map.entities.AspNetUser;

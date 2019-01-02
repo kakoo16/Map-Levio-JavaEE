@@ -53,7 +53,6 @@ public class AssignationService implements AssignationServiceRemote{
 	
 	
 	
-	
 	@Override
 	public void DeleteAssignationById(int AssignationId) {
 		em.remove(em.find(Holiday.class, AssignationId));
