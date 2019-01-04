@@ -1,22 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+            xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    
+<meta charset="utf-8" />
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<title>Login | Welcome to Josh Frontend</title>
+    <!--global css starts-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <!--end of global css-->
+    <!--page level css starts-->
+    <link type="text/css" rel="stylesheet" href="vendors/icheck/skins/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <!--end of page level css--></head>
 
-<body>
-<h:form id="form">
+<body style="background-image: url('images/bgf.jpg');">
+
+
+
+
+<div class="container">
+    <!--Content Section Start -->
+    
+    
+     <div class="row" >
+     
+     <div class="box animation flipInX">
+     <div class="box1">
+            <img src="images/levio.png" alt="logo" class="img-responsive mar" />
+            
+     <h3 class="text-primary">login</h3>
+     
+ <h:form id="form">
 <h:panelGrid columns="2">
 <h:outputText value="login" />
-<h:inputText value="#{loginBean.login}" />
-<h:outputText value="password" />
-<h:inputSecret value="#{loginBean.password}"/>
-<h:commandButton id="btn" action="#{loginBean.doLogin()}" value="login" />
-<h:message  for="btn"/>
+<h:inputText value="#{loginBean.userName}" class="form-control" placeholder="Username"/>
+<h:outputText  value="password" />
+<h:inputSecret  value="#{loginBean.userName}" class="form-control"/>
+<center><h:commandButton id ="btn" action="#{loginBean.doLogin()}" value="login" class="btn btn-block btn-primary" /></center>
+<h:message for="btn"/>
 </h:panelGrid>
-
-
-
 </h:form>
-</body>
-</html>
+</div>
+    </div>
+    </div>
+
+    <!-- //Content Section End --></div><!--global js starts-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--global js end-->
+<script type="text/javascript" src="vendors/icheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("input[type='checkbox']").iCheck({
+            checkboxClass: 'icheckbox_minimal-blue'
+        });
+    });
+</script>
+</body></html>

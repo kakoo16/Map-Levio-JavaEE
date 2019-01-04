@@ -42,7 +42,7 @@ public class Inboxe implements Serializable {
 		this.inboxId = inboxId;
 	}
 
-	public Object getSender() {
+	public String getSender() {
 		return this.sender;
 	}
 

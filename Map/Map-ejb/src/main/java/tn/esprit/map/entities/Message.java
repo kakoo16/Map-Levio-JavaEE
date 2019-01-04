@@ -39,8 +39,8 @@ public class Message implements Serializable {
 	@Column(name="Message_content")
 	private String message_content;
 
-	@Column(name="Message_object")
-	private String message_object;
+	@Column(name="Message_String")
+	private String message_String;
 
 	//bi-directional many-to-many association to Inboxe
 	@ManyToMany
@@ -124,12 +124,12 @@ public class Message implements Serializable {
 		this.message_content = message_content;
 	}
 
-	public String getMessage_object() {
-		return this.message_object;
+	public String getMessage_String() {
+		return this.message_String;
 	}
 
-	public void setMessage_object(String message_object) {
-		this.message_object = message_object;
+	public void setMessage_String(String message_String) {
+		this.message_String = message_String;
 	}
 
 	public List<Inboxe> getInboxes() {

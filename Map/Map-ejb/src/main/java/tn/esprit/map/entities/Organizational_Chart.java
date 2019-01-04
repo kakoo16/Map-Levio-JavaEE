@@ -12,6 +12,22 @@ import java.util.List;
 @Entity
 @NamedQuery(name="Organizational_Chart.findAll", query="SELECT o FROM Organizational_Chart o")
 public class Organizational_Chart implements Serializable {
+	public Organizational_Chart(int chartId, String client_Name, String directionnalLevel, String managerAccount,
+			String nameAssignmentManagerClient, String program_Name, String projectResponsable,
+			List<AspNetUser> aspNetUsers1, List<AspNetUser> aspNetUsers2, List<Project> projects) {
+		super();
+		this.chartId = chartId;
+		this.client_Name = client_Name;
+		this.directionnalLevel = directionnalLevel;
+		this.managerAccount = managerAccount;
+		this.nameAssignmentManagerClient = nameAssignmentManagerClient;
+		this.program_Name = program_Name;
+		this.projectResponsable = projectResponsable;
+		this.aspNetUsers1 = aspNetUsers1;
+		this.aspNetUsers2 = aspNetUsers2;
+		this.projects = projects;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -58,6 +74,35 @@ public class Organizational_Chart implements Serializable {
 
 	public Organizational_Chart() {
 	}
+
+	
+
+	public Organizational_Chart(String client_Name, String directionnalLevel, String managerAccount,
+			String nameAssignmentManagerClient, String program_Name, String projectResponsable) {
+		super();
+		this.client_Name = client_Name;
+		this.directionnalLevel = directionnalLevel;
+		this.managerAccount = managerAccount;
+		this.nameAssignmentManagerClient = nameAssignmentManagerClient;
+		this.program_Name = program_Name;
+		this.projectResponsable = projectResponsable;
+	}
+
+
+
+	public Organizational_Chart(String directionnal_level, String program_Name, String project_responsable,
+			String client_Name, String manager_account, String name_assignment_manager_client, int tobeupdated) {
+		
+		this.client_Name = client_Name;
+		this.directionnalLevel = directionnal_level;
+		this.managerAccount = manager_account;
+		this.nameAssignmentManagerClient = name_assignment_manager_client;
+		this.program_Name = program_Name;
+		this.projectResponsable = project_responsable;
+		this.chartId=tobeupdated;
+	}
+
+
 
 	public int getChartId() {
 		return this.chartId;

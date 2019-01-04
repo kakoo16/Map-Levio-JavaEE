@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	
+     >
+
+
+<head>
+    
+<meta charset="utf-8" />
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<title>Home | Welcome to Josh Frontend</title>
+    <!--global css starts-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <!--end of global css-->
+    <!--page level css starts-->
+    <link rel="stylesheet" type="text/css" href="css/tabbular.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.circliful.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/owl-carousel/owl.theme.css" />
+    <!--end of page level css-->
+    
+    
+    
+    
+    
+    </head>
+
+ <!-- Header Start -->
+    <header>
+        <!-- Icon Section Start -->
+        
+<div class="icon-section">
+            
+<div class="container">
+                
+<ul class="list-inline">
+                    
+<li>
+                        <a href="#"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87" />
+                        </a>
+                    </li>
+                    
+<li>
+                        <a href="#"> <i class="livicon" data-name="twitter" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87" />
+                        </a>
+                    </li>
+                    
+<li>
+                        <a href="#"> <i class="livicon" data-name="google-plus" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87" />
+                        </a>
+                    </li>
+                    
+<li>
+                        <a href="#"> <i class="livicon" data-name="linkedin" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87" />
+                        </a>
+                    </li>
+                    
+<li>
+                        <a href="#"> <i class="livicon" data-name="rss" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87" />
+                        </a>
+                    </li>
+                    
+<li class="pull-right">
+                        
+<ul class="list-inline icon-position">
+                       
+<li>
+                                <a href="mailto:"><i class="livicon" data-name="mail" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff" /></a>
+                                <label class="hidden-xs"><a href="mailto:" class="text-white">leviolevio2019@gmail.com</a></label>
+                            </li>
+ <li class="pull-right">
+                        
+<ul class="list-inline icon-position">
+                            
+
+                  
+                           
+                          <div class="navbar-header">
+ <h:form id="form">
+
+<h:commandButton id ="btn" action="#{loginBean.doLogout()}" value="logout" class="form-control input-lg" />
+<h:message for="btn"/>
+
+
+</h:form>
+</div>
+        
+        
+                            
+                        </ul>
+                    </li>
+ 
+ 
+                           
+<li>
+                                <a href="tel:"><i class="livicon" data-name="phone" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff" /></a>
+                                <label class="hidden-xs"><a href="tel:" class="text-white">(703) 717-4200</a></label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //Icon Section End -->
+        <!-- Nav bar Start -->
+        <nav class="navbar navbar-default container">
+            
+<div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                    <span><a href="#"> <i class="livicon" data-name="responsive-menu" data-size="25" data-loop="true" data-c="#757b87" data-hc="#ccc" />
+                    </a></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/logof.png" class="logo_position" alt="" />
+                </a>
+            </div>
+            
+<div class="collapse navbar-collapse" id="collapse">
+                
+<ul class="nav navbar-nav navbar-right">
+                    
+
+      <li><a href="pages/ClientCode.jsf">Comment Application</a>
+                    </li>              
+<li><a href="DayOff.jsf">Take a Holiday</a>
+                    </li>
+                    
+                    
+                    <li><a href="Oussema.jsf">Manage Organizational Chart</a>
+                    </li>
+                     <li><a href="pages/admin/gererEmploye.jsf">Manage Mandates</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Nav bar End -->
+    </header>
+    <!-- //Header End -->
+  
+
+
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+    
+<ui:define name="content">
+
+<p:notificationBar position="top" effect="slide" styleClass="Hi " widgetVar="bar">
+    <h:outputText value="Welcome To the Mandates section .You are free to assign ressource to projects .!" style="font-size:36px;" />
+</p:notificationBar>
+ 
+<p:commandButton value="Show" onclick="PF('bar').show()" type="button" icon="pi pi-arrow-down" />
+<p:commandButton value="Hide" onclick="PF('bar').hide()" type="button" icon="pi pi-arrow-up"/>
+
+ <p:fieldset legend="This section is related for Mandates Only : " toggleable="true" toggleSpeed="500">
+        <p:ajax event="toggle" listener="#{fieldsetView.handleToggle}"  />
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Levio are Having a problem for assignation Mandate to their ressource .
+            So this section Is developped for assignation Mandates ."></h:outputText>
+        </h:panelGrid>
+    </p:fieldset>
+    <!-- <div class="comment-avator set-bg" style="background-image: url(../pages/Images/mandates-word-concept-vector-16350152.jpg);"></div>  -->
+
+<p:breadCrumb>
+    <p:menuitem value="Categories" outcome="/pages/admin/welcome" />
+    <p:menuitem value="Assign ressource to Mandate"  outcome="/pages/admin/AjouterMandat"  />
+   
+</p:breadCrumb>
+<style type="text/css">           
+            .top {
+                filter:alpha(opacity=80);
+                opacity:0.8;
+                padding:50px 0 0 50px;
+        z-index: 1000;
+            }
+        </style>
+     
+ 
+ 
+<!-- Header -->
+<!-- Ajout -->
+
+<h:form>   
+    <p:growl id="growl" showDetail="true" sticky="true" />  
+       
+    <p:panel header="You can Assign A ressource to a Mandate From now  On">  
+        
+         <h:panelGrid columns="2" cellpadding="5">  
+        <h:outputText value="Projet Name" />
+			<h:selectOneMenu value="#{mandateBean.projectId}">
+			<f:selectItems value="#{mandateBean.projets}" var="p"  itemValue="#{p.projectId}"  itemLabel="#{p.projectName}" />
+			</h:selectOneMenu>
+    </h:panelGrid>  
+     <h:panelGrid columns="2" cellpadding="5">  
+   <h:outputLabel for="msg" value="Email" />
+			<h:selectOneMenu value="#{mandateBean.id}">
+			<f:selectItems value="#{mandateBean.ressources}" var="p"  itemValue="#{p.id}"  itemLabel="#{p.email}" />
+			</h:selectOneMenu>
+    </h:panelGrid>  
+     <h:panelGrid columns="2" cellpadding="5">  
+		<p:outputLabel for="popup" value="Date Debut Mandat :" />
+      
+      
+        <p:calendar id="popup1" value="#{mandateBean.start_date}" />
+   		 </h:panelGrid>  
+   		   <h:panelGrid columns="2" cellpadding="5">  
+   		<p:outputLabel for="popup" value="Date Fin Mandat :" />
+        <p:calendar id="popup" value="#{mandateBean.end_date}" />
+         </h:panelGrid>  
+          <p:messages showDetail="true"/>
+      <p:commandButton value="Assign A Mandate to A ressource" action="#{mandateBean.addMandate()}" update="@form"  oncomplete="PF('dlg').show()"/>
+   
+ 
+    <p:dialog id="dialog" header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
+        <h:panelGrid columns="1" id="display">
+         	
+        <!--  	<h:outputText value="La Ressource selectionner ci-joint est affecté ." />
+         	<h:outputText value="Les Frais du Mandat: #{mandateBean.fees}" />
+            <h:outputText value="Date Fin Mandat: #{mandateBean.end_date}" />
+            <h:outputText value="Date debut Mandat:#{mandateBean.start_date}" /> -->
+        </h:panelGrid>
+    </p:dialog>
+   
+   
+   
+   
+   
+    </p:panel>     
+</h:form>
+ 
+<br /><br />
+<!-- Affichage -->
+
+<h:form>
+    <p:dataTable  value="#{mandateBean.mandates}" var="employe"  rows="10" widgetVar="carsTable"
+                 paginator="true"
+                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
+       
+       <f:facet name="header">
+            <p:outputPanel>
+                <h:outputText value="Search all fields:" />
+                <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+            </p:outputPanel>
+        </f:facet>
+       
+        <p:column headerText="Fees" filterMatchMode="contains">
+            <h:outputText value="#{employe.fees}" />
+        </p:column>
+ 
+        <p:column headerText="Project" filterMatchMode="contains">
+            <h:outputText value="#{employe.project.projectName}" />
+        </p:column>
+ 
+        <p:column headerText="End Date" filterMatchMode="contains">
+            <h:outputText value="#{employe.id.end_Date}" />
+        </p:column>
+ 
+        <p:column headerText="Start date">
+            <h:outputText value="#{employe.id.start_Date}" />
+        </p:column>
+       
+        <f:facet name="paginatorTopLeft">
+            <p:commandButton type="button" icon="pi pi-refresh" />
+        </f:facet>
+ 
+        <f:facet name="paginatorBottomRight">
+            <p:commandButton type="button" icon="pi pi-cloud-upload" />
+        </f:facet>
+ 
+    </p:dataTable>
+</h:form>
+<!-- wiw -->
+
+
+
+
+
+</ui:define>
+</ui:composition>
+</html>
+

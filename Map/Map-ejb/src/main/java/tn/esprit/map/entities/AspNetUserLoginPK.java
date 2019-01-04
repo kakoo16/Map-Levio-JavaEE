@@ -42,27 +42,41 @@ public class AspNetUserLoginPK implements Serializable {
 		this.userId = userId;
 	}
 
-	public boolean equals(Object other) {
-		if (this == other) {
-			return true;
-		}
-		if (!(other instanceof AspNetUserLoginPK)) {
-			return false;
-		}
-		AspNetUserLoginPK castOther = (AspNetUserLoginPK)other;
-		return 
-			this.loginProvider.equals(castOther.loginProvider)
-			&& this.providerKey.equals(castOther.providerKey)
-			&& this.userId.equals(castOther.userId);
-	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AspNetUserLoginPK other = (AspNetUserLoginPK) obj;
+		if (loginProvider == null) {
+			if (other.loginProvider != null)
+				return false;
+		} else if (!loginProvider.equals(other.loginProvider))
+			return false;
+		if (providerKey == null) {
+			if (other.providerKey != null)
+				return false;
+		} else if (!providerKey.equals(other.providerKey))
+			return false;
+		if (userId == null) {
+			if (other.userId != null)
+				return false;
+		} else if (!userId.equals(other.userId))
+			return false;
+		return true;
+	}
+	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int hash = 17;
-		hash = hash * prime + this.loginProvider.hashCode();
-		hash = hash * prime + this.providerKey.hashCode();
-		hash = hash * prime + this.userId.hashCode();
-		
-		return hash;
+		int result = 1;
+		result = prime * result + ((loginProvider == null) ? 0 : loginProvider.hashCode());
+		result = prime * result + ((providerKey == null) ? 0 : providerKey.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		return result;
 	}
 }

@@ -3,7 +3,9 @@ package tn.esprit.map.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 /**
@@ -13,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name="Projects")
 @NamedQuery(name="Project.findAll", query="SELECT p FROM Project p")
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class Project implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -45,10 +48,11 @@ public class Project implements Serializable {
 	private int totalNumberRessources;
 
 	//bi-directional many-to-one association to Mandate
-	@OneToMany(mappedBy="project")
+	@OneToMany(mappedBy="project" ,fetch=FetchType.EAGER)
 	private List<Mandate> mandates;
 
 	//bi-directional many-to-one association to Address
+	@JsonProperty("address")
 	@ManyToOne
 	@JoinColumn(name="addresse_AddressId")
 	private Address address;
@@ -164,7 +168,7 @@ public class Project implements Serializable {
 
 		return mandate;
 	}
-
+	
 	public Address getAddress() {
 		return this.address;
 	}
@@ -195,6 +199,15 @@ public class Project implements Serializable {
 
 	public void setSkill(Skill skill) {
 		this.skill = skill;
+	}
+
+	@Override
+	public String toString() {
+		return "Project [projectId=" + projectId + ", categoryType=" + categoryType + ", endDate=" + endDate
+				+ ", levioNumberRessources=" + levioNumberRessources + ", picture=" + picture + ", projectName="
+				+ projectName + ", projectType=" + projectType + ", startDate=" + startDate + ", totalNumberRessources="
+				+ totalNumberRessources + ", mandates=" + mandates + ", address=" + address + ", aspNetUser="
+				+ aspNetUser + ", organizationalChart=" + organizationalChart + ", skill=" + skill + "]";
 	}
 
 }

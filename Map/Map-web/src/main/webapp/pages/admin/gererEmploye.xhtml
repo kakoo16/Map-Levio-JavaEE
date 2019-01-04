@@ -1,9 +1,11 @@
+
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/template/template.xhtml"
     xmlns:p="http://primefaces.org/ui">
+    
 <ui:define name="content">
 
 <p:notificationBar position="top" effect="slide" styleClass="Hi " widgetVar="bar">
@@ -123,9 +125,7 @@
         <p:column headerText="Start date">
             <h:outputText value="#{employe.id.start_Date}" />
         </p:column>
-        <p:column headerText="Email">
-            <h:outputText value="#{employe.aspNetUser.email}" />
-        </p:column>
+       
         <f:facet name="paginatorTopLeft">
             <p:commandButton type="button" icon="pi pi-refresh" />
         </f:facet>

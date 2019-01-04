@@ -18,9 +18,7 @@
             <p:menuitem value="Quit" outcome="/pages/admin/welcome.xhtml"  />
         </p:submenu>
  
-        <p:submenu label="All about assignations " icon="pi pi-pencil">
-            <p:menuitem value="Add and show all assignations " outcome="/pages/admin/ajouterAssignation" icon="pi pi-angle-double-left" />
-        </p:submenu>
+      
   
   		<p:submenu label="Display Levio position " icon="pi pi-pencil">
             <p:menuitem value="Display Map for levio position " outcome="/pages/admin/Mapdisplay" icon="pi pi-angle-double-left" />
@@ -31,7 +29,10 @@
           
         </p:submenu>
  
-        
+          <p:submenu label="Gerer Organigramme" icon="pi pi-question">
+            <p:menuitem value="Check organigrame session"  />
+          
+        </p:submenu>
        
         <f:facet name="options">
             <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>

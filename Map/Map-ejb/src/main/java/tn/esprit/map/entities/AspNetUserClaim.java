@@ -41,21 +41,21 @@ public class AspNetUserClaim implements Serializable {
 		this.id = id;
 	}
 
-	public String getClaimType() {
+	/*public Object getClaimType() {
 		return this.claimType;
 	}
 
-	public void setClaimType(String claimType) {
+	public void setClaimType(Object claimType) {
 		this.claimType = claimType;
 	}
 
-	public String getClaimValue() {
+	public Object getClaimValue() {
 		return this.claimValue;
 	}
 
-	public void setClaimValue(String claimValue) {
+	public void setClaimValue(Object claimValue) {
 		this.claimValue = claimValue;
-	}
+	}*/
 
 	public AspNetUser getAspNetUser() {
 		return this.aspNetUser;

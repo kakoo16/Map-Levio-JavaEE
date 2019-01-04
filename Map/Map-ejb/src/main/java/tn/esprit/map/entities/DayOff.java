@@ -3,6 +3,7 @@ package tn.esprit.map.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -20,11 +21,11 @@ public class DayOff implements Serializable {
 	@Column(name="DayoffId")
 	private int dayoffId;
 
-	private Timestamp end_Date;
+	private Date end_Date;
 
 	private String raison;
 
-	private Timestamp start_Date;
+	private Date start_Date;
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
@@ -34,6 +35,15 @@ public class DayOff implements Serializable {
 	public DayOff() {
 	}
 
+	
+	public DayOff(Timestamp end_Date, String raison, Timestamp start_Date) {
+		super();
+		this.end_Date = end_Date;
+		this.raison = raison;
+		this.start_Date = start_Date;
+	}
+
+
 	public int getDayoffId() {
 		return this.dayoffId;
 	}
@@ -42,11 +52,12 @@ public class DayOff implements Serializable {
 		this.dayoffId = dayoffId;
 	}
 
-	public Timestamp getEnd_Date() {
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getEnd_Date() {
 		return this.end_Date;
 	}
 
-	public void setEnd_Date(Timestamp end_Date) {
+	public void setEnd_Date(Date end_Date) {
 		this.end_Date = end_Date;
 	}
 
@@ -58,11 +69,12 @@ public class DayOff implements Serializable {
 		this.raison = raison;
 	}
 
-	public Timestamp getStart_Date() {
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getStart_Date() {
 		return this.start_Date;
 	}
 
-	public void setStart_Date(Timestamp start_Date) {
+	public void setStart_Date(Date start_Date) {
 		this.start_Date = start_Date;
 	}
 
@@ -72,6 +84,15 @@ public class DayOff implements Serializable {
 
 	public void setAspNetUser(AspNetUser aspNetUser) {
 		this.aspNetUser = aspNetUser;
+	}
+
+
+	public DayOff(int dayoffId,Date start_Date, Date end_Date, String raison) {
+		super();
+		this.dayoffId = dayoffId;
+		this.end_Date = end_Date;
+		this.raison = raison;
+		this.start_Date = start_Date;
 	}
 
 }

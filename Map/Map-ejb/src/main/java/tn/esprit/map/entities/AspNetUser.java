@@ -1,8 +1,6 @@
 package tn.esprit.map.entities;
 
 import java.io.Serializable;
-
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -16,15 +14,102 @@ import java.util.List;
 @Table(name="AspNetUsers")
 @NamedQuery(name="AspNetUser.findAll", query="SELECT a FROM AspNetUser a")
 public class AspNetUser implements Serializable {
-	private static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
+		
+		
+
+	public AspNetUser(String id, Integer accessFailedCount, Integer administratorId, Integer availibityType,
+				String business_sector, Integer candidatId, Integer client_Type, Integer clientId,
+				Integer contract_Type, Integer daysoffFK, String discriminator, String email, Boolean emailConfirmed,
+				Boolean etat, String etatResource, String first_name, String firstName, Integer holidayFk,
+				String jobType, String lang, String last_name, String lastName, String lat, Boolean lockoutEnabled,
+				Timestamp lockoutEndDateUtc, String logo, String nameClient, Float note, Integer organizational_ChartFk,
+				String passwordHash, String phoneNumber, Boolean phoneNumberConfirmed, String picture,
+				Integer ressourceId, String role, Float salary, String securityStamp, String seniority, Integer skiFk,
+				Integer state_Type, Boolean twoFactorEnabled, String userName, String work_profil,
+				List<AspNetUserClaim> aspNetUserClaims, List<AspNetUserLogin> aspNetUserLogins,
+				List<AspNetRole> aspNetRoles, AspNetUser aspNetUser, List<AspNetUser> aspNetUsers,
+				Organizational_Chart organizationalChart, List<DayOff> dayOffs, List<Holiday> holidays,
+				List<Inboxe> inboxes, List<Job_Request> jobRequests, List<Mandate> mandates, List<Message> messages1,
+				List<Message> messages2, List<Organizational_Chart> organizationalCharts, List<Project> projects,
+				List<Request> requests1, List<Request> requests2, List<Request> requests3, List<Skill> skills) {
+			super();
+			this.id = id;
+			this.accessFailedCount = accessFailedCount;
+			this.administratorId = administratorId;
+			this.availibityType = availibityType;
+			this.business_sector = business_sector;
+			this.candidatId = candidatId;
+			this.client_Type = client_Type;
+			this.clientId = clientId;
+			this.contract_Type = contract_Type;
+			this.daysoffFK = daysoffFK;
+			this.discriminator = discriminator;
+			this.email = email;
+			this.emailConfirmed = emailConfirmed;
+			this.etat = etat;
+			this.etatResource = etatResource;
+			this.first_name = first_name;
+			this.firstName = firstName;
+			this.holidayFk = holidayFk;
+			this.jobType = jobType;
+			this.lang = lang;
+			this.last_name = last_name;
+			this.lastName = lastName;
+			this.lat = lat;
+			this.lockoutEnabled = lockoutEnabled;
+			this.lockoutEndDateUtc = lockoutEndDateUtc;
+			this.logo = logo;
+			this.nameClient = nameClient;
+			this.note = note;
+			this.organizational_ChartFk = organizational_ChartFk;
+			this.passwordHash = passwordHash;
+			this.phoneNumber = phoneNumber;
+			this.phoneNumberConfirmed = phoneNumberConfirmed;
+			this.picture = picture;
+			this.ressourceId = ressourceId;
+			this.role = role;
+			this.salary = salary;
+			this.securityStamp = securityStamp;
+			this.seniority = seniority;
+			this.skiFk = skiFk;
+			this.state_Type = state_Type;
+			this.twoFactorEnabled = twoFactorEnabled;
+			this.userName = userName;
+			this.work_profil = work_profil;
+			this.aspNetUserClaims = aspNetUserClaims;
+			this.aspNetUserLogins = aspNetUserLogins;
+			this.aspNetRoles = aspNetRoles;
+			this.aspNetUser = aspNetUser;
+			this.aspNetUsers = aspNetUsers;
+			this.organizationalChart = organizationalChart;
+			this.dayOffs = dayOffs;
+			this.holidays = holidays;
+			this.inboxes = inboxes;
+			this.jobRequests = jobRequests;
+			this.mandates = mandates;
+			this.messages1 = messages1;
+			this.messages2 = messages2;
+			this.organizationalCharts = organizationalCharts;
+			this.projects = projects;
+			this.requests1 = requests1;
+			this.requests2 = requests2;
+			this.requests3 = requests3;
+			this.skills = skills;
+		}
+
+	public AspNetUser(String email) {
+			super();
+			this.email = email;
+		}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="Id")
-	private String id;
+	private String   id;
 
 	@Column(name="AccessFailedCount")
-	private Integer accessFailedCount;
+	private Integer  accessFailedCount;
 
 	@Column(name="AdministratorId")
 	private Integer  administratorId;
@@ -33,56 +118,59 @@ public class AspNetUser implements Serializable {
 	private Integer  availibityType;
 
 	@Column(name="Business_sector")
-	private String business_sector;
+	private String   business_sector;
 
 	@Column(name="CandidatId")
-	private Integer  candidatId;
+	private Integer candidatId;
 
-	private Integer  client_Type;
+	@Column(name="client_Type")
+	private Integer client_Type;
 
 	@Column(name="ClientId")
-	private Integer  clientId;
+	private Integer clientId;
 
-	private Integer  contract_Type;
+	@Column(name="contract_Type")
+	private Integer contract_Type;
 
 	@Column(name="DaysoffFK")
 	private Integer  daysoffFK;
 
 	@Column(name="Discriminator")
-	private String discriminator;
+	private String   discriminator;
 
 	@Column(name="Email")
-	private String email;
+	private String   email;
 
 	@Column(name="EmailConfirmed")
 	private Boolean emailConfirmed;
-
+	
+	@Column(name="etat")
 	private Boolean etat;
 
 	@Column(name="EtatResource")
-	private String etatResource;
+	private String   etatResource;
 
 	@Column(name="First_name")
-	private String first_name;
+	private String   first_name;
 
 	@Column(name="FirstName")
-	private String firstName;
+	private String   firstName;
 
 	@Column(name="HolidayFk")
-	private Integer holidayFk;
+	private Integer  holidayFk;
 
 	@Column(name="JobType")
-	private String jobType;
+	private String   jobType;
 
-	private String lang;
+	private String   lang;
 
 	@Column(name="Last_name")
-	private String last_name;
+	private String   last_name;
 
 	@Column(name="LastName")
-	private String lastName;
+	private String   lastName;
 
-	private String lat;
+	private String   lat;
 
 	@Column(name="LockoutEnabled")
 	private Boolean lockoutEnabled;
@@ -90,9 +178,9 @@ public class AspNetUser implements Serializable {
 	@Column(name="LockoutEndDateUtc")
 	private Timestamp lockoutEndDateUtc;
 
-	private String logo;
+	private String   logo;
 
-	private String nameClient;
+	private String   nameClient;
 
 	@Column(name="Note")
 	private Float note;
@@ -101,55 +189,57 @@ public class AspNetUser implements Serializable {
 	private Integer  organizational_ChartFk;
 
 	@Column(name="PasswordHash")
-	private String passwordHash;
+	private String   passwordHash;
 
 	@Column(name="PhoneNumber")
-	private String phoneNumber;
+	private String   phoneNumber;
 
 	@Column(name="PhoneNumberConfirmed")
 	private Boolean phoneNumberConfirmed;
 
-	private String picture;
+	private String   picture;
 
 	@Column(name="RessourceId")
-	private Integer ressourceId;
+	private Integer  ressourceId;
 
 	@Column(name="Role")
-	private String role;
+	private String   role;
 
 	@Column(name="Salary")
 	private Float salary;
 
 	@Column(name="SecurityStamp")
-	private String securityStamp;
+	private String   securityStamp;
 
 	@Column(name="Seniority")
-	private String seniority;
+	private String   seniority;
 
 	@Column(name="SkiFk")
-	private Integer skiFk;
+	private Integer  skiFk;
 
-	private Integer state_Type;
+	@Column(name="state_Type")
+	private Integer  state_Type;
 
 	@Column(name="TwoFactorEnabled")
 	private Boolean twoFactorEnabled;
 
 	@Column(name="UserName")
-	private String userName;
+	
+	private String   userName;
 
 	@Column(name="Work_profil")
-	private String work_profil;
+	private String   work_profil;
 
 	//bi-directional many-to-one association to AspNetUserClaim
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser" , fetch=FetchType.EAGER)
 	private List<AspNetUserClaim> aspNetUserClaims;
 
 	//bi-directional many-to-one association to AspNetUserLogin
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser" , fetch=FetchType.EAGER)
 	private List<AspNetUserLogin> aspNetUserLogins;
 
 	//bi-directional many-to-many association to AspNetRole
-	@ManyToMany
+	@ManyToMany( fetch=FetchType.EAGER)
 	@JoinTable(
 		name="AspNetUserRoles"
 		, joinColumns={
@@ -158,6 +248,7 @@ public class AspNetUser implements Serializable {
 		, inverseJoinColumns={
 			@JoinColumn(name="RoleId")
 			}
+		
 		)
 	private List<AspNetRole> aspNetRoles;
 
@@ -167,7 +258,7 @@ public class AspNetUser implements Serializable {
 	private AspNetUser aspNetUser;
 
 	//bi-directional many-to-one association to AspNetUser
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser", fetch=FetchType.EAGER)
 	private List<AspNetUser> aspNetUsers;
 
 	//bi-directional many-to-one association to Organizational_Chart
@@ -176,73 +267,73 @@ public class AspNetUser implements Serializable {
 	private Organizational_Chart organizationalChart;
 
 	//bi-directional many-to-one association to DayOff
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser" , fetch=FetchType.EAGER)
 	private List<DayOff> dayOffs;
 
 	//bi-directional many-to-one association to Holiday
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser" , fetch=FetchType.EAGER)
 	private List<Holiday> holidays;
 
 	//bi-directional many-to-one association to Inboxe
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser", fetch=FetchType.EAGER)
 	private List<Inboxe> inboxes;
 
 	//bi-directional many-to-one association to Job_Request
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser" , fetch=FetchType.EAGER)
 	private List<Job_Request> jobRequests;
 
 	//bi-directional many-to-one association to Mandate
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser", fetch=FetchType.EAGER)
 	private List<Mandate> mandates;
 
 	//bi-directional many-to-one association to Message
-	@OneToMany(mappedBy="aspNetUser1")
+	@OneToMany(mappedBy="aspNetUser1", fetch=FetchType.EAGER)
 	private List<Message> messages1;
 
 	//bi-directional many-to-one association to Message
-	@OneToMany(mappedBy="aspNetUser2")
+	@OneToMany(mappedBy="aspNetUser2", fetch=FetchType.EAGER)
 	private List<Message> messages2;
 
 	//bi-directional many-to-many association to Organizational_Chart
-	@ManyToMany(mappedBy="aspNetUsers2")
+	@ManyToMany(mappedBy="aspNetUsers2", fetch=FetchType.EAGER)
 	private List<Organizational_Chart> organizationalCharts;
 
 	//bi-directional many-to-one association to Project
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser", fetch=FetchType.EAGER)
 	private List<Project> projects;
 
 	//bi-directional many-to-one association to Request
-	@OneToMany(mappedBy="aspNetUser1")
+	@OneToMany(mappedBy="aspNetUser1", fetch=FetchType.EAGER)
 	private List<Request> requests1;
 
 	//bi-directional many-to-one association to Request
-	@OneToMany(mappedBy="aspNetUser2")
+	@OneToMany(mappedBy="aspNetUser2", fetch=FetchType.EAGER)
 	private List<Request> requests2;
 
 	//bi-directional many-to-one association to Request
-	@OneToMany(mappedBy="aspNetUser3")
+	@OneToMany(mappedBy="aspNetUser3", fetch=FetchType.EAGER)
 	private List<Request> requests3;
 
 	//bi-directional many-to-one association to Skill
-	@OneToMany(mappedBy="aspNetUser")
+	@OneToMany(mappedBy="aspNetUser", fetch=FetchType.EAGER)
 	private List<Skill> skills;
 
 	public AspNetUser() {
 	}
 
-	public String getId() {
+	public String   getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(String   id) {
 		this.id = id;
 	}
 
-	public Integer getAccessFailedCount() {
+	public Integer  getAccessFailedCount() {
 		return this.accessFailedCount;
 	}
 
-	public void setAccessFailedCount(Integer accessFailedCount) {
+	public void setAccessFailedCount(Integer  accessFailedCount) {
 		this.accessFailedCount = accessFailedCount;
 	}
 
@@ -254,75 +345,75 @@ public class AspNetUser implements Serializable {
 		this.administratorId = administratorId;
 	}
 
-	public Integer getAvailibityType() {
+	public Integer  getAvailibityType() {
 		return this.availibityType;
 	}
 
-	public void setAvailibityType(Integer availibityType) {
+	public void setAvailibityType(Integer  availibityType) {
 		this.availibityType = availibityType;
 	}
 
-	public String getBusiness_sector() {
+	public String   getBusiness_sector() {
 		return this.business_sector;
 	}
 
-	public void setBusiness_sector(String business_sector) {
+	public void setBusiness_sector(String   business_sector) {
 		this.business_sector = business_sector;
 	}
 
-	public Integer getCandidatId() {
+	public Integer  getCandidatId() {
 		return this.candidatId;
 	}
 
-	public void setCandidatId(Integer candidatId) {
+	public void setCandidatId(Integer  candidatId) {
 		this.candidatId = candidatId;
 	}
 
-	public Integer getClient_Type() {
+	public Integer  getClient_Type() {
 		return this.client_Type;
 	}
 
-	public void setClient_Type(Integer client_Type) {
+	public void setClient_Type(Integer  client_Type) {
 		this.client_Type = client_Type;
 	}
 
-	public Integer getClientId() {
+	public Integer  getClientId() {
 		return this.clientId;
 	}
 
-	public void setClientId(Integer clientId) {
+	public void setClientId(Integer  clientId) {
 		this.clientId = clientId;
 	}
 
-	public Integer getContract_Type() {
+	public Integer  getContract_Type() {
 		return this.contract_Type;
 	}
 
-	public void setContract_Type(Integer contract_Type) {
+	public void setContract_Type(Integer  contract_Type) {
 		this.contract_Type = contract_Type;
 	}
 
-	public Integer getDaysoffFK() {
+	public Integer  getDaysoffFK() {
 		return this.daysoffFK;
 	}
 
-	public void setDaysoffFK(Integer daysoffFK) {
+	public void setDaysoffFK(Integer  daysoffFK) {
 		this.daysoffFK = daysoffFK;
 	}
 
-	public String getDiscriminator() {
+	public String   getDiscriminator() {
 		return this.discriminator;
 	}
 
-	public void setDiscriminator(String discriminator) {
+	public void setDiscriminator(String   discriminator) {
 		this.discriminator = discriminator;
 	}
 
-	public String getEmail() {
+	public String   getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(String   email) {
 		this.email = email;
 	}
 
@@ -342,75 +433,75 @@ public class AspNetUser implements Serializable {
 		this.etat = etat;
 	}
 
-	public String getEtatResource() {
+	public String   getEtatResource() {
 		return this.etatResource;
 	}
 
-	public void setEtatResource(String etatResource) {
+	public void setEtatResource(String   etatResource) {
 		this.etatResource = etatResource;
 	}
 
-	public String getFirst_name() {
+	public String   getFirst_name() {
 		return this.first_name;
 	}
 
-	public void setFirst_name(String first_name) {
+	public void setFirst_name(String   first_name) {
 		this.first_name = first_name;
 	}
 
-	public String getFirstName() {
+	public String   getFirstName() {
 		return this.firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(String   firstName) {
 		this.firstName = firstName;
 	}
 
-	public Integer getHolidayFk() {
+	public Integer  getHolidayFk() {
 		return this.holidayFk;
 	}
 
-	public void setHolidayFk(Integer holidayFk) {
+	public void setHolidayFk(Integer  holidayFk) {
 		this.holidayFk = holidayFk;
 	}
 
-	public String getJobType() {
+	public String   getJobType() {
 		return this.jobType;
 	}
 
-	public void setJobType(String jobType) {
+	public void setJobType(String   jobType) {
 		this.jobType = jobType;
 	}
 
-	public String getLang() {
+	public String   getLang() {
 		return this.lang;
 	}
 
-	public void setLang(String lang) {
+	public void setLang(String   lang) {
 		this.lang = lang;
 	}
 
-	public String getLast_name() {
+	public String   getLast_name() {
 		return this.last_name;
 	}
 
-	public void setLast_name(String last_name) {
+	public void setLast_name(String   last_name) {
 		this.last_name = last_name;
 	}
 
-	public String getLastName() {
+	public String   getLastName() {
 		return this.lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(String   lastName) {
 		this.lastName = lastName;
 	}
 
-	public String getLat() {
+	public String   getLat() {
 		return this.lat;
 	}
 
-	public void setLat(String lat) {
+	public void setLat(String   lat) {
 		this.lat = lat;
 	}
 
@@ -430,19 +521,19 @@ public class AspNetUser implements Serializable {
 		this.lockoutEndDateUtc = lockoutEndDateUtc;
 	}
 
-	public String getLogo() {
+	public String   getLogo() {
 		return this.logo;
 	}
 
-	public void setLogo(String logo) {
+	public void setLogo(String   logo) {
 		this.logo = logo;
 	}
 
-	public String getNameClient() {
+	public String   getNameClient() {
 		return this.nameClient;
 	}
 
-	public void setNameClient(String nameClient) {
+	public void setNameClient(String   nameClient) {
 		this.nameClient = nameClient;
 	}
 
@@ -454,27 +545,27 @@ public class AspNetUser implements Serializable {
 		this.note = note;
 	}
 
-	public Integer getOrganizational_ChartFk() {
+	public Integer  getOrganizational_ChartFk() {
 		return this.organizational_ChartFk;
 	}
 
-	public void setOrganizational_ChartFk(Integer organizational_ChartFk) {
+	public void setOrganizational_ChartFk(Integer  organizational_ChartFk) {
 		this.organizational_ChartFk = organizational_ChartFk;
 	}
 
-	public String getPasswordHash() {
+	public String   getPasswordHash() {
 		return this.passwordHash;
 	}
 
-	public void setPasswordHash(String passwordHash) {
+	public void setPasswordHash(String   passwordHash) {
 		this.passwordHash = passwordHash;
 	}
 
-	public String getPhoneNumber() {
+	public String   getPhoneNumber() {
 		return this.phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(String   phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -486,27 +577,27 @@ public class AspNetUser implements Serializable {
 		this.phoneNumberConfirmed = phoneNumberConfirmed;
 	}
 
-	public String getPicture() {
+	public String   getPicture() {
 		return this.picture;
 	}
 
-	public void setPicture(String picture) {
+	public void setPicture(String   picture) {
 		this.picture = picture;
 	}
 
-	public Integer getRessourceId() {
+	public Integer  getRessourceId() {
 		return this.ressourceId;
 	}
 
-	public void setRessourceId(Integer ressourceId) {
+	public void setRessourceId(Integer  ressourceId) {
 		this.ressourceId = ressourceId;
 	}
 
-	public String getRole() {
+	public String   getRole() {
 		return this.role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(String   role) {
 		this.role = role;
 	}
 
@@ -518,35 +609,35 @@ public class AspNetUser implements Serializable {
 		this.salary = salary;
 	}
 
-	public String getSecurityStamp() {
+	public String   getSecurityStamp() {
 		return this.securityStamp;
 	}
 
-	public void setSecurityStamp(String securityStamp) {
+	public void setSecurityStamp(String   securityStamp) {
 		this.securityStamp = securityStamp;
 	}
 
-	public String getSeniority() {
+	public String   getSeniority() {
 		return this.seniority;
 	}
 
-	public void setSeniority(String seniority) {
+	public void setSeniority(String   seniority) {
 		this.seniority = seniority;
 	}
 
-	public Integer getSkiFk() {
+	public Integer  getSkiFk() {
 		return this.skiFk;
 	}
 
-	public void setSkiFk(Integer skiFk) {
+	public void setSkiFk(Integer  skiFk) {
 		this.skiFk = skiFk;
 	}
 
-	public Integer getState_Type() {
+	public Integer  getState_Type() {
 		return this.state_Type;
 	}
 
-	public void setState_Type(Integer state_Type) {
+	public void setState_Type(Integer  state_Type) {
 		this.state_Type = state_Type;
 	}
 
@@ -558,19 +649,19 @@ public class AspNetUser implements Serializable {
 		this.twoFactorEnabled = twoFactorEnabled;
 	}
 
-	public String getUserName() {
+	public String   getUserName() {
 		return this.userName;
 	}
 
-	public void setUserName(String userName) {
+	public void setUserName(String   userName) {
 		this.userName = userName;
 	}
 
-	public String getWork_profil() {
+	public String   getWork_profil() {
 		return this.work_profil;
 	}
 
-	public void setWork_profil(String work_profil) {
+	public void setWork_profil(String   work_profil) {
 		this.work_profil = work_profil;
 	}
 
@@ -935,5 +1026,5 @@ public class AspNetUser implements Serializable {
 
 		return skill;
 	}
-   
+
 }
